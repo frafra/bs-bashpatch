@@ -1,0 +1,13 @@
+--- ./www/js/electron.js	2020-12-07 00:02:32.343962309 +0100
++++ ./www/js/electron.js	2020-12-07 00:04:09.533032496 +0100
+@@ -1126,6 +1126,9 @@
+     if(platform=='mac'){
+         path = "/Applications/Spotify.app"
+     }
++    if(platform=='lin64'){
++        path = "/usr/lib64/spotify-client/spotify"
++    }
+     if(platform=='win'){
+         path = process.env.LOCALAPPDATA+'\\Microsoft\\WindowsApps\\Spotify.exe'
+     }
+

@@ -1,0 +1,19 @@
+--- ./www/app.js	2020-12-07 00:31:02.880272605 +0100
++++ ./www/app.js	2020-12-07 00:31:50.271308267 +0100
+@@ -38311,7 +38311,7 @@
+             })
+         }, f7.checkAppUpdate = function(e) {
+             var t;
+-            "macOS" == f7.appInfo.platform && (t = "http://upgrade.nadelectronics.com/desktop_app/osx/version.xml?currentVersion"), "Windows" == f7.appInfo.platform && (t = "http://upgrade.nadelectronics.com/desktop_app/windows/version.xml?currentVersion"), f7.request.setup({
++            "macOS" == f7.appInfo.platform && (t = "http://upgrade.nadelectronics.com/desktop_app/osx/version.xml?currentVersion"), "linux" == f7.appInfo.platform && (t = "http://upgrade.nadelectronics.com/desktop_app/osx/version.xml?currentVersion"), "Windows" == f7.appInfo.platform && (t = "http://upgrade.nadelectronics.com/desktop_app/windows/version.xml?currentVersion"), f7.request.setup({
+                 cache: !1
+             }), f7.request({
+                 url: t,
+@@ -38478,6 +38478,7 @@
+             build: "1374",
+             autofill: "false" != localStorage.autofill,
+             autoupgrade: "false" != localStorage.autoupgrade,
++            platform: "linux",
+             queue: {
+                 loading: !1,
+                 pagesize: 200,
