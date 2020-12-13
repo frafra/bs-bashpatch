@@ -4,7 +4,7 @@ set -eux
 
 URL="https://www.bluesound.com/downloads/"
 
-# Create temporary directory
+# Create directories
 tmp=$(realpath $(mktemp -d bluos-controller.XXX))
 cleanup() {
     rm -rf "$tmp"
@@ -23,6 +23,7 @@ wget -N -P downloads "$archive_url"
 
 # Unpack
 7z e "downloads/${archive_url##*/}" -r app.asar -o"$tmp"
+npm add --save-dev npx
 npx asar extract "$tmp/app.asar" "$tmp/app"
 
 # Install dependencies
@@ -40,7 +41,7 @@ done
 npx electron-builder -l AppImage
 
 # Move results
-mv dist "$OLDPWD"
+mv dist/*.AppImage "$OLDPWD/output"
 
 # Cleanup
 cleanup
