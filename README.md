@@ -11,9 +11,9 @@ See: https://support1.bluesound.com/hc/en-us/community/posts/360033533054-BluOS-
 Replace `docker` with `podman` if you prefer to use Podman.
 
 ```
-podman build -t bs-bashpatch .
+docker build -t bs-bashpatch .
 mkdir -p downloads output
-podman run --rm -v $PWD/output:/output -v $PWD/downloads:/downloads bs-bashpatch
+docker run --rm -v $PWD/output:/output -v $PWD/downloads:/downloads bs-bashpatch
 ```
 
 ## Without using Docker or Podman
