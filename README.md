@@ -9,9 +9,8 @@ See: https://support1.bluesound.com/hc/en-us/community/posts/360033533054-BluOS-
 Podman is an alternative to Docker, which does not require any daemon or special permissions to run.
 
 ```
-podman build -t bs-bashpatch .
 mkdir -p downloads output
-podman run --rm -v $PWD/output:/output:Z -v $PWD/downloads:/downloads:Z bs-bashpatch
+podman run --rm -v ./output:/output:Z -v ./downloads:/downloads:Z ghcr.io/frafra/bs-bashpatch
 ```
 
 Open the output directory and run the generated AppImage.
@@ -27,6 +26,14 @@ rm -rf ~/.config/BluOS\ Controller
 ```
 
 # Advanced topics
+
+## Build container image with Podman
+
+```
+podman build -t bs-bashpatch-custom .
+mkdir -p downloads output
+podman run --rm -v ./output:/output:Z -v ./downloads:/downloads:Z bs-bashpatch-custom
+```
 
 ## Build without using containers
 
