@@ -58,6 +58,14 @@ podman run --rm -v ./output:/output:Z -v ./downloads:/downloads:Z bs-bashpatch-c
 ./bs-bashpatch.sh
 ```
 
+### Remove temporary files
+
+In case the script fails, a temporary directory will be kept, which can be removed with this command:
+
+```
+rm -r bluos-controller.*
+```
+
 ## Electron logging
 
 Run the latest generated AppImage and print console messages:
