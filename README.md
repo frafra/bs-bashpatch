@@ -71,5 +71,5 @@ rm -r bluos-controller.*
 Run the latest generated AppImage and print console messages:
 
 ```
-ELECTRON_ENABLE_LOGGING=true "$(ls output/*.AppImage | sort | head -n1)"
+ELECTRON_ENABLE_LOGGING=true "$(ls output/*.AppImage | sort | tail -n1)"
 ```
