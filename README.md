@@ -73,3 +73,17 @@ Run the latest generated AppImage and print console messages:
 ```
 ELECTRON_ENABLE_LOGGING=true "$(ls output/*.AppImage | sort | tail -n1)"
 ```
+
+## Share a folder
+
+Here is how to run Samba in a container, to share the default music folder:
+
+```
+sudo podman run --rm -it -p 139:139 -p 445:445 -v $(xdg-user-dir MUSIC:/mount:ro -d dperson/samba -p -n -s "music;/mount"
+```
+
+Here is the path of the network resource which should be added to BluOS Controller:
+
+```
+echo '\\'$(hostname)'\'music
+```
