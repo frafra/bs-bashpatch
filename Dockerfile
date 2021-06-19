@@ -1,7 +1,7 @@
-FROM registry.opensuse.org/opensuse/tumbleweed:latest
+FROM registry.fedoraproject.org/fedora:34
 LABEL org.opencontainers.image.source https://github.com/frafra/bs-patch
 
-RUN zypper -n install lynx wget jq npm10 p7zip-full patch
+RUN dnf install -y lynx wget jq npm p7zip-plugins patch
 ADD bs-bashpatch.sh .
 ADD patches patches
 
